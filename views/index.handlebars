@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1 class="text-center">Account Login</h1>
+
+  <form method="POST" action="/">
+    <div class="form-group">
+      <label for="InputEmail">Email address</label>
+      <input type="email" class="form-control" placeholder="請輸入您的電子郵件..." name="email">
+      <small class="form-text text-muted">請注意：客服人員絕不會向您索取密碼</small>
+    </div>
+    <div class="form-group">
+      <label for="InputPassword">Password</label>
+      <input type="password" class="form-control" placeholder="請輸入您的密碼..." name="password">
+      <!-- if result.loginSuccess from app.js were false, warning text would be showed -->
+      {{#ifEquals result.loginSuccess false}}
+      <small class="form-text text-warning">帳號或密碼錯誤，請重新輸入</small>
+      {{/ifEquals}}
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary btn-lg">登入</button>
+    </div>
+  </form>
+
+</div>

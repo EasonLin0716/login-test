@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+// requiring loginCheck function from login_check.js
 const loginCheck = require('./login_check')
 
 const users = require('./users.json')

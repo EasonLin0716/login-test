@@ -13,6 +13,7 @@ function loginCheck(account, users) {
 
   })
 
+  // if server didn't find any matching data from users.json, will return null
   return userName
 }
 

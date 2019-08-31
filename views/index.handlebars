@@ -11,7 +11,7 @@
     <div class="form-group">
       <label for="InputPassword">Password</label>
       <input type="password" class="form-control" placeholder="請輸入您的密碼..." name="password">
-      <!-- if result.loginSuccess from app.js were false, warning text would be showed -->
+      <!-- if result from app.js were null, this will show  -->
       {{#ifEquals result null}}
       <small class="form-text text-warning">帳號或密碼錯誤，請重新輸入</small>
       {{/ifEquals}}

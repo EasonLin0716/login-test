@@ -1,23 +1,19 @@
 function loginCheck(account, users) {
 
-  let result = {
-    loginSuccess: false,
-    name: ''
-  }
+  let userName = null
 
   // iterate users and check each user data
   users.forEach(user => {
 
-    if (user.email === account.email && user.password === account.password) {
-      result.loginSuccess = true
-      result.name = user.firstName
+    if (user.email === account.email) {
+      if (user.password === account.password) {
+        userName = user.firstName
+      }
     }
 
   })
 
-  console.log(result)
-
-  return result
+  return userName
 }
 
 module.exports = loginCheck

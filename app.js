@@ -12,7 +12,7 @@ const users = require('./users.json')
 // https://stackoverflow.com/questions/34252817/handlebarsjs-check-if-a-string-is-equal-to-a-value
 const Handlebars = require("handlebars");
 Handlebars.registerHelper("ifEquals", function (arg1, arg2, options) {
-  return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+  return arg1 === arg2 ? options.fn(this) : options.inverse(this);
 });
 
 // setting template engine
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   const account = req.body
   const result = loginCheck(account, users.results)
-  if (result.loginSuccess) {
+  if (result) {
     res.render('login', { result })
   } else {
     res.render('index', { result })
